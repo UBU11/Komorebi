@@ -1,0 +1,24 @@
+{
+  "name": "@komorebi/api-high-freq",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.7.0",
+    "@komorebi/database": "workspace:*",
+    "@komorebi/types": "workspace:*",
+    "hono": "^4.7.0",
+    "ioredis": "^5.6.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.0",
+    "typescript": "^5.8.0"
+  }
+}
