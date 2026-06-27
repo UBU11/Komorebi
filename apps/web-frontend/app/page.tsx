@@ -1,20 +1,31 @@
-import { env } from "../lib/env";
+import { Header } from "./_components/Header";
+import { Hero } from "./_components/Hero";
+import { Features } from "./_components/Features";
+import { HowItWorks } from "./_components/HowItWorks";
+import { Architecture } from "./_components/Architecture";
+import { CodeShowcase } from "./_components/CodeShowcase";
+import { LiveDemo } from "./_components/LiveDemo";
+import { Pricing } from "./_components/Pricing";
+import { FAQ } from "./_components/FAQ";
+import { CTA } from "./_components/CTA";
+import { Footer } from "./_components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-10 font-sans">
-      <h1 className="text-3xl font-bold">Komorebi Analytics</h1>
-      <p className="mt-2 text-neutral-600">
-        Real-time dashboard. Generative UI + dual backends wired.
-      </p>
-      <ul className="mt-6 space-y-1 text-sm">
-        <li>
-          High-frequency API: <code>{env.API_HIGH_FREQ_URL}</code>
-        </li>
-        <li>
-          AI engine: <code>{env.API_AI_ENGINE_URL}</code>
-        </li>
-      </ul>
-    </main>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <Features />
+        <HowItWorks />
+        <Architecture />
+        <CodeShowcase />
+        <LiveDemo />
+        <Pricing />
+        <FAQ />
+        <CTA />
+      </main>
+      <Footer />
+    </>
   );
 }

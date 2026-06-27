@@ -10,7 +10,7 @@ See `AGENT.md` for architecture and `principle.md` for code standards.
 
 | Path | Stack | Responsibility |
 |------|-------|----------------|
-| `apps/web-frontend` | Next.js 16 · Tailwind v4 · Vercel AI SDK | Dashboard UI + generative charts |
+| `apps/web-frontend` | Next.js 16 · Tailwind v4 · Vercel AI SDK · Bun | Dashboard UI + generative charts |
 | `apps/api-high-freq` | Hono · Bun · Drizzle | Real-time data, SSE, CRUD (110K req/s target) |
 | `apps/api-ai-engine` | FastAPI · SQLAlchemy | NLQ→SQL, anomaly detection, summaries, reports |
 | `packages/database` | Drizzle | Shared NeonDB schema |
@@ -22,7 +22,7 @@ See `AGENT.md` for architecture and `principle.md` for code standards.
 cp .env.example .env
 docker compose up -d              # Postgres + Redis
 pnpm install
-pnpm dev                          # turbo runs all apps
+pnpm dev                          # turbo runs all apps (Hono + Next.js under Bun)
 
 # python engine (separate venv)
 cd apps/api-ai-engine && uv sync && uv run uvicorn app.main:app --reload --port 8000

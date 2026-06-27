@@ -33,5 +33,4 @@ venv/
 *.log
 
 # docs
-AGENT.md
-principle.md
+
